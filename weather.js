@@ -1,3 +1,4 @@
+//Variables to get started with the search and include API key
 var citySearch;
 var APIkey = '&appid=713c348493c88760b9f54828487c650d';
 var weatherAPI = 'https://api.openweathermap.org/data/2.5/weather?';
@@ -9,9 +10,33 @@ var getWeatherIcon = 'http://openweathermap.org/img/wn/';
 var searchHistoryArr = [];
 
 $(document).ready(function(){
-    $("#submit").click(function(){
-        return getWeather();
-    });
+    init();
+//Functions to search for the weather and also clear the  search history
+    function init() {
+        search();
+        $("#current-forecast").hide();
+        $('#five-day-forecast-container').hide();
+        $('current-location-weather').hide();
+        $('#error-div').hide();
+        displayHistory();
+        clearHistory();
+        clickHistory();
+        currentLocationButton();
+
+    }
+    function search(){
+        $('#search-button').on('click', function(){
+            citySearch = $('#search-input')
+            .val()
+            .trim();
+
+            if (citySearch ==''){
+                return;
+            }
+            $('#search-input').val('');
+            getWeatherIcon(citySearch);
+        });
+         
 
 const apiKey= "&appid=713c348493c88760b9f54828487c650d"    
 $("searchbtn").on("click", function(){
@@ -28,7 +53,7 @@ function APIcalls(){
     
     $("#name_of_city").text("Today's Weather in " + city);
     $.ajax({
-        url: queryurl,
+        url: uviQueryURL,
         method: "GET",
         
     }).then(function(response){
