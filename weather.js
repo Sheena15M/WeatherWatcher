@@ -1,7 +1,10 @@
+//ALWAYS START WITH $(document).ready(function()){}
+$(document).ready(function(){
+  init();
+
 //Variables to get started with the search and include API key
 var citySearch;
 var APIkey = '&appid=713c348493c88760b9f54828487c650d';
-var APIkey = '&appid=aec9ce29cc7fba6c7ba0bda572c27986';
 var weatherAPI = 'https://api.openweathermap.org/data/2.5/weather?';
 var uviAPI = 'https://api.openweathermap.org/data/2.5/uvi?lat=';
 var forecastAPI = 'https://api.openweathermap.org/data/2.5/forecast?q=';
@@ -10,19 +13,18 @@ var units = '&units=imperial';
 var getWeatherIcon = 'https://openweathermap.org/img/wn/';
 var searchHistoryArr = [];
 
-$(document).ready(function(){
-    init();
-//Functions to search for the weather and also clear the  search history
+
+//Functions to search for the weather and also clear the search history
     function init() {
         search();
         $("#current-forecast").hide();
         $('#five-day-forecast-container').hide();
         $('current-location-weather').hide();
         $('#error-div').hide();
-        displayHistory();
-        clearHistory();
-        clickHistory();
-        currentLocationButton();
+        //displayHistory();
+        //clearHistory();
+        //clickHistory();
+        //currentLocationButton();
 
     }
     function search(){
@@ -35,7 +37,7 @@ $(document).ready(function(){
                 return;
             }
             $('#search-input').val('');
-            getWeatherIcon(citySearch);
+            getWeather(citySearch);
         });
          
 
@@ -91,7 +93,7 @@ $(document).ready(function(){
                     '</span>'
                 );
         
-                // DRY this out...
+                // UVI infomation 
                 if (uvi < 3) {
                   $('#uvi-badge').css('background-color', 'green');
                 } else if (uvi < 6) {
@@ -271,7 +273,7 @@ $(document).ready(function(){
               $('#search-history').prepend(historyLi);
               $('#search-history-container').show();
             }
-            return (searchHistoryArr = localSearchHistory);
+            return searchHistoryArr = localSearchHistory;//don't put parenthesis after return
           }
         
           function createHistory() {
@@ -294,6 +296,6 @@ $(document).ready(function(){
               getWeather(cityNameHistory);
             });
           }
-    });
-};      
+    };
+});      
         
