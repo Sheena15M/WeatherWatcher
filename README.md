@@ -1,8 +1,10 @@
 # WeatherWatcher
 Homework 6 for RCB involved creating an interactive weather app that showed a list of previously searched weather in various cities, show a 5 day weekday forcast including humidity and UV index. Also to have the information show on the console log and store in local storage.
 
-# Screenshot
-* https://github.com/Sheena15M/WeatherWatcher/blob/master/Screen%20Shot%202020-08-04%20at%208.52.57%20PM.png
+# Screenshots
+* https://github.com/Sheena15M/WeatherWatcher/blob/972819c8237b5fd7841ebd2baa2e3556e038b641/Images/Landing.png
+* https://github.com/Sheena15M/WeatherWatcher/blob/master/Images/Initial%20search.png
+* https://github.com/Sheena15M/WeatherWatcher/blob/master/Images/Previous%20cities.png
 
 # Repo link
 *  https://sheena15m.github.io/WeatherWatcher/
