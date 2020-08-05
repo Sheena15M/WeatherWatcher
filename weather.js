@@ -7,7 +7,7 @@ var uviAPI = 'https://api.openweathermap.org/data/2.5/uvi?lat=';
 var forecastAPI = 'https://api.openweathermap.org/data/2.5/forecast?q=';
 var geoAPI = navigator.geolocation;
 var units = '&units=imperial';
-var getWeatherIcon = 'http://openweathermap.org/img/wn/';
+var getWeatherIcon = 'https://openweathermap.org/img/wn/';
 var searchHistoryArr = [];
 
 $(document).ready(function(){
